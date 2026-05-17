@@ -22,9 +22,7 @@ interface EIP6963ProviderDetail {
   provider: EIP1193Provider;
 }
 
-interface EIP6963AnnounceProviderEvent extends Event {
-  detail: EIP6963ProviderDetail;
-}
+interface EIP6963AnnounceProviderEvent extends CustomEvent<EIP6963ProviderDetail> {}
 
 interface WalletError {
   code?: number;
@@ -165,7 +163,6 @@ async function disconnect() {
       return;
     }
 
-    resetConnectionState();
     showError(walletError);
   }
 }
@@ -181,7 +178,6 @@ function renderConnectArea() {
 
   if (state.address) {
     const address = document.createElement("span");
-    address.className = "wallet-address";
     address.textContent = `${state.address.slice(0, 6)}…${state.address.slice(-4)}`;
 
     const button = document.createElement("button");
