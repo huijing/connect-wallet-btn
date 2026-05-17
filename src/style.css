@@ -1,0 +1,128 @@
+/* CSS Resets */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Generic styles */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, Adwaita Sans, Cantarell, Ubuntu, roboto, noto, helvetica, arial, sans-serif;
+}
+
+button {
+  border: 0;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+/* Layout styles */
+header {
+  padding: 1rem;
+  display: flex;
+}
+
+/* Connect Button */
+.wallet-connect {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-inline-start: auto;
+}
+
+.btn-connect {
+  background-color: rgb(26,163,255);
+  color: white;
+}
+
+/* Wallet modal */
+dialog {
+  margin: auto;
+  min-width: 20rem;
+}
+
+dialog form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+:modal {
+  background-image: linear-gradient(to bottom left, rgb(252,250,255), rgb(248,252,255));
+  border: 2px solid rgb(26,163,255);
+  border-radius: 0.5rem;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+dialog[open] {
+  animation: slideDown 0.5s ease normal;
+}
+@keyframes slideDown {
+  from {
+    transform: translateY(-50%);
+  }
+  to {
+    transform: translateY(0%);
+  }
+}
+
+dialog form p {
+  font-weight: 700;
+}
+
+.wallet-icon {
+  width: 1.5em;
+  height: 1.5em;
+}
+
+.btn-wallet {
+  border: 2px solid rgb(26,163,255);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: white;
+  font-size: larger;
+}
+
+/* Toast message */
+.toast-message {
+  position: fixed;
+  top: 0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: mistyrose;
+  border: 2px solid pink;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  animation: toastPop 0.5s ease normal;
+}
+@keyframes toastPop {
+  from {
+    transform: translateX(-50%) translateY(-50%);
+  }
+  to {
+    transform: translateX(-50%) translateY(0%);
+  }
+}
