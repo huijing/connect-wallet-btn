@@ -2,7 +2,7 @@
 
 A vanilla TypeScript EIP-6963 wallet connect button. Uses Vite as the dev server and build tool.
 
-![Screenshot of Connect Wallet button](./screenshot.png)
+![Screenshot of Connect Wallet button](public/screenshot.png)
 
 ## Development
 
